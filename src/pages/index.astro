@@ -1,0 +1,198 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { profile } from "../data/profile";
+---
+
+<BaseLayout>
+  <!-- About -->
+  <section id="about" class="mb-16">
+    <h2 class="section-heading">About</h2>
+    <div class="prose">
+      <p>
+        Welcome! I am <strong>{profile.displayName}</strong>, a researcher interested in
+        machine learning and artificial intelligence. This is my personal academic website
+        where I share my publications, experiences, and more.
+      </p>
+      <p>
+        My research focuses on developing novel methods and algorithms that advance
+        the state of the art. I am passionate about solving challenging problems
+        and contributing to the academic community.
+      </p>
+    </div>
+  </section>
+
+  <!-- Publications -->
+  <section id="publications" class="mb-16">
+    <h2 class="section-heading">Publications</h2>
+    <div class="flex flex-col gap-4">
+      <div class="publication-card">
+        <h3 class="text-base font-semibold text-text-primary mb-1 group-hover:text-accent transition-colors duration-150">
+          Paper Title Placeholder
+        </h3>
+        <p class="text-sm text-text-secondary mb-2">
+          Author A, <strong class="text-text-primary">Sicheng Lai</strong>, Author B
+        </p>
+        <p class="text-sm text-text-secondary italic mb-3">
+          Conference / Journal Name, 2024
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <a
+            href="#"
+            class="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full
+                   bg-accent/10 text-accent hover:bg-accent/20
+                   transition-colors duration-150"
+          >
+            Paper
+          </a>
+          <a
+            href="#"
+            class="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full
+                   bg-accent/10 text-accent hover:bg-accent/20
+                   transition-colors duration-150"
+          >
+            Code
+          </a>
+        </div>
+      </div>
+
+      <div class="publication-card">
+        <h3 class="text-base font-semibold text-text-primary mb-1">
+          Another Paper Title Placeholder
+        </h3>
+        <p class="text-sm text-text-secondary mb-2">
+          <strong class="text-text-primary">Sicheng Lai</strong>, Author C, Author D
+        </p>
+        <p class="text-sm text-text-secondary italic mb-3">
+          Workshop / Preprint, 2023
+        </p>
+        <div class="flex flex-wrap gap-2">
+          <a
+            href="#"
+            class="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full
+                   bg-accent/10 text-accent hover:bg-accent/20
+                   transition-colors duration-150"
+          >
+            Paper
+          </a>
+          <a
+            href="#"
+            class="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full
+                   bg-accent/10 text-accent hover:bg-accent/20
+                   transition-colors duration-150"
+          >
+            Project
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experiences -->
+  <section id="experiences" class="mb-16">
+    <h2 class="section-heading">Experiences</h2>
+    <div class="ml-2">
+      <div class="experience-card">
+        <div class="mb-1">
+          <h3 class="text-base font-semibold text-text-primary">Research Assistant</h3>
+          <p class="text-sm text-text-secondary">University Name</p>
+        </div>
+        <p class="text-xs text-text-secondary">2023 &ndash; Present</p>
+        <p class="text-sm text-text-secondary mt-2">
+          Working on machine learning research projects focused on novel algorithm development.
+        </p>
+      </div>
+
+      <div class="experience-card">
+        <div class="mb-1">
+          <h3 class="text-base font-semibold text-text-primary">Teaching Assistant</h3>
+          <p class="text-sm text-text-secondary">University Name</p>
+        </div>
+        <p class="text-xs text-text-secondary">2022 &ndash; 2023</p>
+        <p class="text-sm text-text-secondary mt-2">
+          Assisted in undergraduate courses on data structures and algorithms.
+        </p>
+      </div>
+
+      <div class="experience-card">
+        <div class="mb-1">
+          <h3 class="text-base font-semibold text-text-primary">B.Sc. in Computer Science</h3>
+          <p class="text-sm text-text-secondary">University Name</p>
+        </div>
+        <p class="text-xs text-text-secondary">2018 &ndash; 2022</p>
+        <p class="text-sm text-text-secondary mt-2">
+          Graduated with honors. Focused on AI and software engineering coursework.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section id="cv" class="mb-16">
+    <h2 class="section-heading">CV</h2>
+    <div class="prose mb-6">
+      <p>
+        My full curriculum vitae is available as a PDF document. You can view it
+        inline or download it for your records.
+      </p>
+    </div>
+    <div class="flex flex-wrap gap-3">
+      <a
+        href={profile.cvPath}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium
+               rounded-lg bg-accent text-white hover:bg-accent-hover
+               transition-colors duration-150 shadow-sm"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+          <path d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+        </svg>
+        View PDF
+      </a>
+      <a
+        href={profile.cvPath}
+        download
+        class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium
+               rounded-lg border border-border text-text-primary
+               hover:bg-bg-secondary hover:border-accent/30
+               transition-all duration-150"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Download
+      </a>
+    </div>
+  </section>
+
+  <!-- Misc -->
+  <section id="misc" class="mb-16">
+    <h2 class="section-heading">Misc</h2>
+    <div class="prose mb-6">
+      <p>
+        A collection of miscellaneous things I find interesting or worth sharing.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div class="rounded-xl border border-border bg-surface p-5
+                  hover:shadow-md hover:border-accent/30
+                  transition-all duration-200">
+        <h3 class="text-sm font-semibold text-text-primary mb-2">Hobbies</h3>
+        <p class="text-sm text-text-secondary">
+          Placeholder for hobbies, interests, and other fun things.
+        </p>
+      </div>
+      <div class="rounded-xl border border-border bg-surface p-5
+                  hover:shadow-md hover:border-accent/30
+                  transition-all duration-200">
+        <h3 class="text-sm font-semibold text-text-primary mb-2">Fun Facts</h3>
+        <p class="text-sm text-text-secondary">
+          Placeholder for fun facts, trivia, or anything else worth mentioning.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

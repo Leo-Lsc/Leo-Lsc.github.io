@@ -1,0 +1,155 @@
+---
+import { profile } from "../data/profile";
+import { navItems } from "../data/content";
+import ThemeToggle from "./ThemeToggle.astro";
+---
+
+<header
+  class="sticky top-0 z-50 w-full border-b border-border
+         bg-nav-bg backdrop-blur-md
+         transition-colors duration-200"
+>
+  <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 h-16 lg:px-6">
+    <!-- Name / Home -->
+    <a
+      href="/"
+      class="text-lg font-semibold text-text-primary hover:text-accent
+             transition-colors duration-150 whitespace-nowrap"
+      onclick="window.location.reload(); return false;"
+    >
+      {profile.displayName}
+    </a>
+
+    <!-- Desktop nav links -->
+    <div class="hidden md:flex items-center gap-1">
+      {navItems.map((item) => (
+        <a
+          href={`#${item.id}`}
+          data-section={item.id}
+          class="nav-link px-3 py-2 text-sm font-medium rounded-lg
+                 text-text-secondary hover:text-text-primary hover:bg-accent/10
+                 transition-all duration-150"
+        >
+          {item.label}
+        </a>
+      ))}
+      <div class="ml-2 border-l border-border pl-2">
+        <ThemeToggle />
+      </div>
+    </div>
+
+    <!-- Mobile controls -->
+    <div class="flex items-center gap-1 md:hidden">
+      <ThemeToggle />
+      <button
+        id="mobile-menu-btn"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        class="flex h-9 w-9 items-center justify-center rounded-lg
+               text-text-secondary hover:text-text-primary hover:bg-bg-secondary
+               transition-colors duration-200 cursor-pointer"
+      >
+        <!-- Hamburger -->
+        <svg id="menu-open-icon" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <!-- Close -->
+        <svg id="menu-close-icon" class="h-5 w-5 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile dropdown -->
+  <div
+    id="mobile-menu"
+    class="md:hidden overflow-hidden transition-all duration-200 ease-in-out"
+    style="max-height: 0;"
+  >
+    <div class="flex flex-col gap-1 px-4 pb-4">
+      {navItems.map((item) => (
+        <a
+          href={`#${item.id}`}
+          data-section={item.id}
+          class="nav-link px-3 py-2 text-sm font-medium rounded-lg
+                 text-text-secondary hover:text-text-primary hover:bg-accent/10
+                 transition-all duration-150"
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>
+
+<script>
+  function initNav() {
+    // ── Mobile menu toggle ──
+    const menuBtn = document.getElementById("mobile-menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const openIcon = document.getElementById("menu-open-icon");
+    const closeIcon = document.getElementById("menu-close-icon");
+
+    if (menuBtn && mobileMenu && openIcon && closeIcon) {
+      let isOpen = false;
+
+      function toggleMenu() {
+        isOpen = !isOpen;
+        mobileMenu!.style.maxHeight = isOpen ? `${mobileMenu!.scrollHeight}px` : "0";
+        openIcon!.classList.toggle("hidden", isOpen);
+        closeIcon!.classList.toggle("hidden", !isOpen);
+        menuBtn!.setAttribute("aria-expanded", String(isOpen));
+        menuBtn!.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+      }
+
+      menuBtn.addEventListener("click", toggleMenu);
+
+      // Close mobile menu on nav link click
+      mobileMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          if (isOpen) toggleMenu();
+        });
+      });
+    }
+
+    // ── IntersectionObserver for active section highlighting ──
+    const sections = document.querySelectorAll<HTMLElement>("section[id]");
+    const navLinks = document.querySelectorAll<HTMLAnchorElement>("[data-section]");
+
+    if (sections.length && navLinks.length) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const id = entry.target.getAttribute("id");
+            const links = document.querySelectorAll<HTMLAnchorElement>(`[data-section="${id}"]`);
+            links.forEach((link) => {
+              if (entry.isIntersecting) {
+                link.classList.add("text-accent", "bg-accent/10");
+                link.classList.remove("text-text-secondary");
+              } else {
+                link.classList.remove("text-accent", "bg-accent/10");
+                link.classList.add("text-text-secondary");
+              }
+            });
+          });
+        },
+        {
+          rootMargin: "-30% 0px -60% 0px",
+          threshold: 0,
+        }
+      );
+
+      sections.forEach((section) => observer.observe(section));
+
+      // Cleanup on page transitions
+      document.addEventListener("astro:before-preparation", () => {
+        observer.disconnect();
+      }, { once: true });
+    }
+  }
+
+  initNav();
+  document.addEventListener("astro:after-swap", initNav);
+</script>

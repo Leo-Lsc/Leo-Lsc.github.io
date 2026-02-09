@@ -1,0 +1,27 @@
+{
+  "name": "leo-lsc.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leo-Lsc/Leo-Lsc.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Leo-Lsc/Leo-Lsc.github.io/issues"
+  },
+  "homepage": "https://github.com/Leo-Lsc/Leo-Lsc.github.io#readme",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/vite": "^4.1.18",
+    "astro": "^5.17.1",
+    "tailwindcss": "^4.1.18"
+  }
+}

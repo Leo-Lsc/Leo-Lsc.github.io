@@ -1,0 +1,73 @@
+---
+import TopNav from "../components/TopNav.astro";
+import Sidebar from "../components/Sidebar.astro";
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Sicheng (Leo) Lai",
+  description = "Personal academic website of Sicheng (Leo) Lai.",
+} = Astro.props;
+
+const siteUrl = Astro.site?.toString() ?? "https://Leo-Lsc.github.io";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>{title}</title>
+
+    <!-- FOUC prevention: apply theme before first paint -->
+    <script is:inline>
+      (function () {
+        const saved = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        if (saved === "dark" || (!saved && prefersDark)) {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen bg-bg text-text-primary font-sans">
+    <TopNav />
+
+    <div class="mx-auto max-w-6xl px-4 lg:px-6">
+      <div class="lg:grid lg:grid-cols-[260px_1fr] lg:gap-8">
+        <!-- Sidebar -->
+        <div class="lg:py-8">
+          <Sidebar />
+        </div>
+
+        <!-- Main content -->
+        <main class="py-8 lg:py-8">
+          <slot />
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
