@@ -119,7 +119,7 @@ Copy an existing `.experience-card` block in the Experiences section:
 
 ### Change color scheme
 
-Edit the CSS variables in `src/styles/global.css` under `:root` (light) and `.dark` (dark). The current scheme is **Slate + Indigo**. Four predefined schemes are documented in `CLAUDE.md` section 6.
+Edit the CSS variables in `src/styles/global.css` under `:root` (light) and `.dark` (dark). The current scheme is **Sand + Teal**. Four predefined schemes are documented in `CLAUDE.md` section 6.
 
 ### Change navigation items
 
