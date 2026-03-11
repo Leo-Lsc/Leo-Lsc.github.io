@@ -3,32 +3,32 @@
 /* Tailwind v4 class-based dark mode */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* ─── Color Tokens: Scheme 3 — Midnight + Cyan ─── */
+/* ─── Color Tokens: Scheme 4 — Mono + Red ─── */
 :root {
-  --color-bg: #F7FAFF;
-  --color-bg-secondary: #EEF3FC;
-  --color-text-primary: #0B1220;
-  --color-text-secondary: #334155;
-  --color-accent: #22D3EE;
-  --color-accent-hover: #06B6D4;
-  --color-border: #D9E2F2;
+  --color-bg: #FFFFFF;
+  --color-bg-secondary: #F5F5F5;
+  --color-text-primary: #111827;
+  --color-text-secondary: #4B5563;
+  --color-accent: #EF4444;
+  --color-accent-hover: #DC2626;
+  --color-border: #E5E7EB;
   --color-surface: #FFFFFF;
-  --color-surface-hover: #F7FAFF;
-  --color-nav-bg: rgba(247, 250, 255, 0.85);
-  --color-shadow: rgba(11, 18, 32, 0.08);
+  --color-surface-hover: #F9FAFB;
+  --color-nav-bg: rgba(255, 255, 255, 0.85);
+  --color-shadow: rgba(17, 24, 39, 0.08);
 }
 
 .dark {
-  --color-bg: #050A14;
-  --color-bg-secondary: #0A1525;
-  --color-text-primary: #E6F0FF;
-  --color-text-secondary: #9BB0C8;
-  --color-accent: #22D3EE;
-  --color-accent-hover: #67E8F9;
-  --color-border: #0F1B2D;
-  --color-surface: #0D1E33;
-  --color-surface-hover: #122240;
-  --color-nav-bg: rgba(5, 10, 20, 0.85);
+  --color-bg: #0A0A0A;
+  --color-bg-secondary: #141414;
+  --color-text-primary: #F5F5F5;
+  --color-text-secondary: #A3A3A3;
+  --color-accent: #EF4444;
+  --color-accent-hover: #F87171;
+  --color-border: #262626;
+  --color-surface: #171717;
+  --color-surface-hover: #222222;
+  --color-nav-bg: rgba(10, 10, 10, 0.85);
   --color-shadow: rgba(0, 0, 0, 0.4);
 }
 
