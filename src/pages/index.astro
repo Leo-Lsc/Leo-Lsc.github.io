@@ -150,37 +150,111 @@ import { profile } from "../data/profile";
   <section id="experiences" class="mb-16">
     <h2 class="section-heading">Experiences</h2>
     <div class="ml-2">
+
+      <!-- Education -->
+      <p class="text-xs font-semibold uppercase tracking-widest text-text-secondary mb-3">Education</p>
+
       <div class="experience-card">
-        <div class="mb-1">
-          <h3 class="text-base font-semibold text-text-primary">Research Assistant</h3>
-          <p class="text-sm text-text-secondary">University Name</p>
+        <div class="flex items-start justify-between gap-2 mb-1">
+          <div>
+            <h3 class="text-base font-semibold text-text-primary">B.Sc. Computer Science and Engineering</h3>
+            <p class="text-sm text-text-secondary">The Chinese University of Hong Kong, Shenzhen</p>
+          </div>
+          <p class="text-xs text-text-secondary shrink-0">Sept. 2022 &ndash; June 2026</p>
         </div>
-        <p class="text-xs text-text-secondary">2023 &ndash; Present</p>
-        <p class="text-sm text-text-secondary mt-2">
-          Working on machine learning research projects focused on novel algorithm development.
-        </p>
+        <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-text-secondary">
+          <li>Dean's List (Outstanding academic merit), 2022&ndash;2025</li>
+          <li>Undergraduate Research Awards (Key research contributions), 2024&ndash;2025</li>
+        </ul>
       </div>
 
       <div class="experience-card">
-        <div class="mb-1">
-          <h3 class="text-base font-semibold text-text-primary">Teaching Assistant</h3>
-          <p class="text-sm text-text-secondary">University Name</p>
+        <div class="flex items-start justify-between gap-2 mb-1">
+          <div>
+            <h3 class="text-base font-semibold text-text-primary">Visiting Student</h3>
+            <p class="text-sm text-text-secondary">University of California San Diego</p>
+          </div>
+          <p class="text-xs text-text-secondary shrink-0">March 2025 &ndash; July 2025</p>
         </div>
-        <p class="text-xs text-text-secondary">2022 &ndash; 2023</p>
-        <p class="text-sm text-text-secondary mt-2">
-          Assisted in undergraduate courses on data structures and algorithms.
-        </p>
+      </div>
+
+      <!-- Research Experience -->
+      <p class="text-xs font-semibold uppercase tracking-widest text-text-secondary mb-3 mt-8">Research Experience</p>
+
+      <div class="experience-card">
+        <div class="flex items-start justify-between gap-2 mb-1">
+          <div>
+            <h3 class="text-base font-semibold text-text-primary">SimulCost: A Cost-Aware Playground</h3>
+            <p class="text-sm text-text-secondary">UC San Diego &mdash; Supervisor: Prof. Rose Yu</p>
+          </div>
+          <p class="text-xs text-text-secondary shrink-0">April 2025 &ndash; Present</p>
+        </div>
+        <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-text-secondary">
+          <li>Developed SimulCost, a comprehensive benchmarking framework evaluating LLM cost-accuracy trade-off on scientific simulation optimization across 13 physics solvers and 40+ hyperparameter tuning tasks.</li>
+          <li>Engineered a scalable Playground API with caching and pandas DataFrame-based persistence, reducing redundant computations by 50%.</li>
+          <li>Benchmarked LLMs against brute-force (grid search) and Bayesian optimization (Gaussian process) baselines across 6 real-world scenarios, conducting statistical analysis and ablation studies.</li>
+        </ul>
       </div>
 
       <div class="experience-card">
-        <div class="mb-1">
-          <h3 class="text-base font-semibold text-text-primary">B.Sc. in Computer Science</h3>
-          <p class="text-sm text-text-secondary">University Name</p>
+        <div class="flex items-start justify-between gap-2 mb-1">
+          <div>
+            <h3 class="text-base font-semibold text-text-primary">Data Contamination in Multimodal LLMs</h3>
+            <p class="text-sm text-text-secondary">CUHK-Shenzhen &mdash; Supervisor: Prof. Benyou Wang</p>
+          </div>
+          <p class="text-xs text-text-secondary shrink-0">June 2024 &ndash; Dec. 2024</p>
         </div>
-        <p class="text-xs text-text-secondary">2018 &ndash; 2022</p>
-        <p class="text-sm text-text-secondary mt-2">
-          Graduated with honors. Focused on AI and software engineering coursework.
-        </p>
+        <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-text-secondary">
+          <li>Pioneered MM-Detect, a systematic multimodal contamination detection framework with two novel methods: Option Order Sensitivity Test and Slot Guessing for Perturbed Caption.</li>
+          <li>Validated by training LLaVA-1.5-7B variants with controlled leakage at early, mid, and late training stages across contamination ratios of 10%, 50%, and 100%.</li>
+          <li>Developed a heuristic method to trace contamination origins, revealing unimodal contamination in base LLMs and cross-modal contamination via training data overlap analysis.</li>
+        </ul>
+      </div>
+
+      <!-- Internships -->
+      <p class="text-xs font-semibold uppercase tracking-widest text-text-secondary mb-3 mt-8">Internships</p>
+
+      <div class="experience-card">
+        <div class="flex items-start justify-between gap-2 mb-1">
+          <div>
+            <h3 class="text-base font-semibold text-text-primary">Multimodal Algorithm Engineer</h3>
+            <p class="text-sm text-text-secondary">Tsinghua Shenzhen International Graduate School, Shenzhen</p>
+          </div>
+          <p class="text-xs text-text-secondary shrink-0">Dec. 2024 &ndash; March 2025</p>
+        </div>
+        <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-text-secondary">
+          <li>Optimized MLLM configurations through systematic experimentation with LLMs (Qwen2.5/Vicuna) and visual encoders (CLIP/MLCD/SigLIP) based on the LLaVA-Next framework.</li>
+          <li>Evaluated model performance using VLMEvalKit and lmms-eval; identified optimal configuration (Qwen2.5 + SigLIP), achieving top 20% ranking on the OpenCompass MLLM Leaderboard.</li>
+          <li>Trained Qwen2.5 + SigLIP on agricultural datasets curated and augmented with data-juicer, achieving expert-level agricultural capabilities while maintaining general-domain performance.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Teaching -->
+  <section id="teaching" class="mb-16">
+    <h2 class="section-heading">Teaching</h2>
+    <div class="ml-2">
+      <div class="experience-card">
+        <div class="flex justify-between items-start gap-4">
+          <div>
+            <h3 class="text-sm font-semibold text-text-primary">
+              Undergraduate Student Teaching Fellow
+            </h3>
+            <p class="text-sm text-text-secondary mt-0.5">
+              STA2001: Probability and Statistics I ·
+              CUHK-Shenzhen ·
+              <a
+                href="https://sds.cuhk.edu.cn/en/teacher/265"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-accent transition-colors duration-150"
+              >Prof. Tianshi Chen</a>
+            </p>
+          </div>
+          <span class="text-xs text-text-secondary whitespace-nowrap">Spring 2024</span>
+        </div>
       </div>
     </div>
   </section>
@@ -239,17 +313,22 @@ import { profile } from "../data/profile";
       <div class="rounded-xl border border-border bg-surface p-5
                   hover:shadow-md hover:border-accent/30
                   transition-all duration-200">
-        <h3 class="text-sm font-semibold text-text-primary mb-2">Hobbies</h3>
-        <p class="text-sm text-text-secondary">
-          Placeholder for hobbies, interests, and other fun things.
-        </p>
+        <h3 class="text-sm font-semibold text-text-primary mb-3">Hobbies</h3>
+        <ul class="text-sm text-text-secondary space-y-1">
+          <li>🏋️ Gym — light weight baby!</li>
+          <li>🏀 Basketball</li>
+          <li>⚽ Soccer</li>
+          <li>🎤 Singing (shower concerts mostly, ngl)</li>
+          <li>🌄 Travelling — especially chasing beautiful natural scenery</li>
+        </ul>
       </div>
       <div class="rounded-xl border border-border bg-surface p-5
                   hover:shadow-md hover:border-accent/30
                   transition-all duration-200">
-        <h3 class="text-sm font-semibold text-text-primary mb-2">Fun Facts</h3>
+        <h3 class="text-sm font-semibold text-text-primary mb-3">Fun Facts</h3>
         <p class="text-sm text-text-secondary">
-          Placeholder for fun facts, trivia, or anything else worth mentioning.
+          When I'm not coding, you'll probably find me in Valorant — maining Raze and Phoenix,
+          and totally being the best Radiant on North America. (Just kidding. Maybe in the future 🤫)
         </p>
       </div>
     </div>
