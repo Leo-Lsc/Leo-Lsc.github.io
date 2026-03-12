@@ -14,7 +14,7 @@
   --color-border: #E7E5E4;
   --color-surface: #FFFFFF;
   --color-surface-hover: #FBF7F0;
-  --color-nav-bg: rgba(251, 247, 240, 0.85);
+  --color-nav-bg: rgba(227, 219, 206, 0.92);
   --color-shadow: rgba(28, 25, 23, 0.08);
 }
 
@@ -28,7 +28,7 @@
   --color-border: #292524;
   --color-surface: #1A1F1F;
   --color-surface-hover: #252B2B;
-  --color-nav-bg: rgba(14, 17, 17, 0.85);
+  --color-nav-bg: rgba(30, 37, 37, 0.90);
   --color-shadow: rgba(0, 0, 0, 0.35);
 }
 
