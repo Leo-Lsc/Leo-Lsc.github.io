@@ -9,14 +9,23 @@ import { profile } from "../data/profile";
     <h2 class="section-heading">About</h2>
     <div class="prose">
       <p>
-        Welcome! I am <strong>{profile.displayName}</strong>, a researcher interested in
-        machine learning and artificial intelligence. This is my personal academic website
-        where I share my publications, experiences, and more.
+        Hi! I'm Sicheng Lai, a senior undergrad at the Chinese University of Hong Kong, Shenzhen.
       </p>
       <p>
-        My research focuses on developing novel methods and algorithms that advance
-        the state of the art. I am passionate about solving challenging problems
-        and contributing to the academic community.
+        I had the pleasure of spending a semester at UC San Diego, where I got to
+        work with <a href="https://eydcao.github.io/" target="_blank" rel="noopener">Yadi Cao</a>
+        in <a href="https://roseyu.com/" target="_blank" rel="noopener">Prof. Rose Yu</a>'s
+        lab on <strong>SimulCost</strong>, a cost-aware benchmarking framework
+        for evaluating LLMs on scientific simulation optimization.
+        I'm thrilled that this work — one I'm genuinely proud of — is finally going open-source.
+      </p>
+      <p>
+        At CUHK-Shenzhen, I was fortunate to collaborate with
+        <a href="https://bbsngg.github.io/" target="_blank" rel="noopener">Dr. Dingjie Song</a>,
+        supervised by
+        <a href="https://wabyking.github.io/old.html" target="_blank" rel="noopener">Prof. Benyou Wang</a>,
+        on multimodal data contamination detection. We developed <strong>MM-Detect</strong>,
+        a systematic framework for detecting data contamination in multimodal LLMs across both text and image modalities.
       </p>
     </div>
   </section>
@@ -25,19 +34,27 @@ import { profile } from "../data/profile";
   <section id="publications" class="mb-16">
     <h2 class="section-heading">Publications</h2>
     <div class="flex flex-col gap-4">
+
+      <!-- SimulCost -->
       <div class="publication-card">
-        <h3 class="text-base font-semibold text-text-primary mb-1 group-hover:text-accent transition-colors duration-150">
-          Paper Title Placeholder
+        <h3 class="text-base font-semibold text-text-primary mb-1">
+          SimulCost: A Cost-Aware Benchmark for Automating Physics Simulations with LLMs
         </h3>
-        <p class="text-sm text-text-secondary mb-2">
-          Author A, <strong class="text-text-primary">Sicheng Lai</strong>, Author B
+        <p class="text-sm text-text-secondary mb-1">
+          Yadi Cao†, <strong class="text-text-primary">Sicheng Lai</strong>†, Jiahe Huang†, Yang Zhang†, Zach Lawrence†, Rohan Bhakta†, Izzy F. Thomas†, Mingyun Cao†, Chung-Hao Tsai, Zihao Zhou, Yidong Zhao, Hao Liu, Alessandro Marinoni, Alexey Arefiev, Rose Yu*
         </p>
-        <p class="text-sm text-text-secondary italic mb-3">
-          Conference / Journal Name, 2024
+        <p class="text-xs text-text-secondary mb-2">† equal contribution &nbsp;·&nbsp; * corresponding author</p>
+        <p class="text-sm text-text-secondary italic mb-2">
+          arXiv preprint
+        </p>
+        <p class="text-sm text-text-secondary mb-3">
+          <span class="font-medium text-text-primary">TL;DR</span>&nbsp; A cost-aware benchmark for LLM-guided simulation parameter tuning — measuring both accuracy and simulation compute across 12 physics simulators in fluid dynamics, solid mechanics, and plasma physics.
         </p>
         <div class="flex flex-wrap gap-2">
           <a
             href="#"
+            target="_blank"
+            rel="noopener noreferrer"
             class="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full
                    bg-accent/10 text-accent hover:bg-accent/20
                    transition-colors duration-150"
@@ -45,29 +62,58 @@ import { profile } from "../data/profile";
             Paper
           </a>
           <a
-            href="#"
+            href="https://github.com/Rose-STL-Lab/SimulCost-Bench"
+            target="_blank"
+            rel="noopener noreferrer"
             class="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full
                    bg-accent/10 text-accent hover:bg-accent/20
                    transition-colors duration-150"
           >
             Code
           </a>
+          <a
+            href="https://huggingface.co/datasets/Rose-STL-Lab/SimulCost-Bench"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full
+                   bg-accent/10 text-accent hover:bg-accent/20
+                   transition-colors duration-150"
+          >
+            Dataset
+          </a>
+          <a
+            href="https://sichenglai.com/SimulCost-Website/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full
+                   bg-accent/10 text-accent hover:bg-accent/20
+                   transition-colors duration-150"
+          >
+            Website
+          </a>
         </div>
       </div>
 
+      <!-- MM-Detect -->
       <div class="publication-card">
         <h3 class="text-base font-semibold text-text-primary mb-1">
-          Another Paper Title Placeholder
+          Both Text and Images Leaked! A Systematic Analysis of Data Contamination in Multimodal LLM
         </h3>
-        <p class="text-sm text-text-secondary mb-2">
-          <strong class="text-text-primary">Sicheng Lai</strong>, Author C, Author D
+        <p class="text-sm text-text-secondary mb-1">
+          <strong class="text-text-primary">Sicheng Lai</strong>†, Dingjie Song†, Mingxuan Wang, Shunian Chen, Lichao Sun, Benyou Wang*
         </p>
-        <p class="text-sm text-text-secondary italic mb-3">
-          Workshop / Preprint, 2023
+        <p class="text-xs text-text-secondary mb-2">† equal contribution &nbsp;·&nbsp; * corresponding author</p>
+        <p class="text-sm text-text-secondary italic mb-2">
+          ICML 2025 DIG-BUGs Workshop (Oral) &nbsp;·&nbsp; EMNLP 2025 (Findings)
+        </p>
+        <p class="text-sm text-text-secondary mb-3">
+          <span class="font-medium text-text-primary">TL;DR</span>&nbsp; A systematic framework for detecting multimodal data contamination in MLLMs, revealing significant contamination — even originating from unimodal pre-training — across 12 models and 5 benchmarks.
         </p>
         <div class="flex flex-wrap gap-2">
           <a
-            href="#"
+            href="https://arxiv.org/abs/2411.03823"
+            target="_blank"
+            rel="noopener noreferrer"
             class="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full
                    bg-accent/10 text-accent hover:bg-accent/20
                    transition-colors duration-150"
@@ -75,15 +121,28 @@ import { profile } from "../data/profile";
             Paper
           </a>
           <a
-            href="#"
+            href="https://github.com/MLLM-Data-Contamination/MM-Detect"
+            target="_blank"
+            rel="noopener noreferrer"
             class="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full
                    bg-accent/10 text-accent hover:bg-accent/20
                    transition-colors duration-150"
           >
-            Project
+            Code
+          </a>
+          <a
+            href="https://icml.cc/virtual/2025/51035"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center px-3 py-1 text-xs font-medium rounded-full
+                   bg-accent/10 text-accent hover:bg-accent/20
+                   transition-colors duration-150"
+          >
+            Talk
           </a>
         </div>
       </div>
+
     </div>
   </section>
 
